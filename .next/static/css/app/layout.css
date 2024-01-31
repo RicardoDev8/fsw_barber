@@ -610,17 +610,11 @@ video {
 .relative {
   position: relative;
 }
-.left-3 {
-  left: 0.75rem;
-}
-.top-3 {
-  top: 0.75rem;
+.left-2 {
+  left: 0.5rem;
 }
 .top-2 {
   top: 0.5rem;
-}
-.left-2 {
-  left: 0.5rem;
 }
 .z-50 {
   z-index: 50;
@@ -636,6 +630,12 @@ video {
 }
 .mt-6 {
   margin-top: 1.5rem;
+}
+.mb-\[\] {
+  margin-bottom: ;
+}
+.mb-\[4\.5rem\] {
+  margin-bottom: 4.5rem;
 }
 .flex {
   display: flex;
@@ -707,14 +707,14 @@ video {
 .justify-between {
   justify-content: space-between;
 }
+.gap-1 {
+  gap: 0.25rem;
+}
 .gap-2 {
   gap: 0.5rem;
 }
 .gap-4 {
   gap: 1rem;
-}
-.gap-1 {
-  gap: 0.25rem;
 }
 .space-y-1 > :not([hidden]) ~ :not([hidden]) {
   --tw-space-y-reverse: 0;
@@ -841,6 +841,10 @@ video {
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
 }
+.py-6 {
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+}
 .pb-2 {
   padding-bottom: 0.5rem;
 }
@@ -849,6 +853,9 @@ video {
 }
 .pt-5 {
   padding-top: 1.25rem;
+}
+.text-center {
+  text-align: center;
 }
 .text-2xl {
   font-size: 1.5rem;
@@ -915,11 +922,11 @@ video {
 .underline-offset-4 {
   text-underline-offset: 4px;
 }
-.opacity-75 {
-  opacity: 0.75;
-}
 .opacity-90 {
   opacity: 0.9;
+}
+.opacity-75 {
+  opacity: 0.75;
 }
 .shadow-sm {
   --tw-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);

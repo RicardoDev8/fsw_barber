@@ -1,4 +1,4 @@
 {
-  "/(home)/page": "app/(home)/page.js",
-  "/barbershops/[id]/page": "app/barbershops/[id]/page.js"
+  "/barbershops/[id]/page": "app/barbershops/[id]/page.js",
+  "/(home)/page": "app/(home)/page.js"
 }

@@ -1,5 +1,4 @@
 {
-  "/not-found": "app/not-found.js",
   "/(home)/page": "app/(home)/page.js",
   "/barbershops/[id]/page": "app/barbershops/[id]/page.js",
   "/api/auth/[...nextauth]/route": "app/api/auth/[...nextauth]/route.js"

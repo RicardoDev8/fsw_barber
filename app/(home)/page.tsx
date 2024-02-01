@@ -7,6 +7,7 @@ import Search from "./_components/search";
 import BookingItem from "../_components/booking-item";
 import { db } from "../_lib/prisma";
 import BarbershopItem from "./_components/barbershop-item";
+import { Barbershop } from "@prisma/client";
 
 export default async function Home() {
 

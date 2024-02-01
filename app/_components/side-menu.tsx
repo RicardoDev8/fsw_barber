@@ -1,6 +1,5 @@
 
-import Image from "next/image";
-import { Card, CardContent } from "./ui/card";
+
 import { Button } from "./ui/button";
 import { CalendarIcon, HomeIcon, LogInIcon, LogOutIcon, MenuIcon, User2Icon } from "lucide-react";
 import { signIn, signOut, useSession } from "next-auth/react";
@@ -23,8 +22,8 @@ const SideMenu = () => {
     return ( 
        <>
         <SheetHeader className="border-b border-solid border-secondary p-5" >
-        <SheetTitle>Menu</SheetTitle>
-    </SheetHeader>
+            <SheetTitle>Menu</SheetTitle>
+        </SheetHeader>
 
     {data?.user ? (
         <div className="flex justify-between px-5 py-6 items-center" >

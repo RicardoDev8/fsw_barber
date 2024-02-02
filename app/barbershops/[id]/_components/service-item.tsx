@@ -7,7 +7,7 @@ import { Card, CardContent } from "@/app/_components/ui/card";
 import { Sheet, SheetContent, SheetFooter, SheetHeader, SheetTitle, SheetTrigger } from "@/app/_components/ui/sheet";
 
 import { Calendar } from "@/app/_components/ui/calendar";
-import { Barbershop, Service } from "@prisma/client";
+import { Barbershop, Booking, Service } from "@prisma/client";
 import { signIn, useSession } from "next-auth/react";
 import Image from "next/image";
 import { useEffect, useMemo, useState } from "react";
@@ -18,6 +18,7 @@ import { saveBooking } from "../_actions/save-booking";
 import { Loader2 } from "lucide-react";
 import { toast } from "sonner";
 import { useRouter } from "next/navigation";
+import { getDayBookings } from "../_actions/get-day-bookings";
 
 interface ServiceItemProps {
     barbershop: Barbershop;
@@ -36,6 +37,21 @@ const ServiceItem = ({service, barbershop, isAuthenticated}: ServiceItemProps) =
     const [submitIsLoading, setSubmitIsLoading] = useState(false)
 
     const [sheetIsOpen, setSheetIsOpen] = useState(false)
+    const [dayBookings, setDayBookings] = useState<Booking[]>([])
+
+    useEffect(() => {
+        if(!date){
+            return;
+        }
+
+        const refreshHours = async () => {
+            const valDayBookings = await getDayBookings(barbershop.id, date)
+
+            setDayBookings(valDayBookings)
+        } 
+
+        refreshHours();
+    }, [date, barbershop.id])
 
     const handleDateClick = (date: Date | undefined) => {
         setDate(date);
@@ -95,8 +111,28 @@ const ServiceItem = ({service, barbershop, isAuthenticated}: ServiceItemProps) =
     }
 
     const timeList = useMemo(() => {
-        return date ? genareteDayTimeList(date) : []
-    }, [date])
+        if(!date){
+            return []
+        }
+
+        return genareteDayTimeList(date).filter(time => {
+            const timeHour = Number(time.split(':')[0]);
+            const timeMinutes =  Number(time.split(':')[1]);
+
+            const booking = dayBookings.find(booking => {
+
+                const bookingHour = booking.date.getHours();
+                const bookingMinutes = booking.date.getMinutes();
+
+                return bookingHour === timeHour && bookingMinutes === timeMinutes;
+            })
+
+            if(!booking){
+                return true
+            }
+            return false
+        })
+    }, [date, dayBookings])
 
 
 

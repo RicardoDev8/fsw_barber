@@ -951,6 +951,19 @@ video {
 .bg-transparent {
   background-color: transparent;
 }
+.bg-\[\] {
+  background-color: ;
+}
+.bg-\[\#\] {
+  background-color: #;
+}
+.bg-\[\#22\] {
+  background-color: #22;
+}
+.bg-\[\#221C3D\] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(34 28 61 / var(--tw-bg-opacity));
+}
 .fill-primary {
   fill: hsl(var(--primary));
 }

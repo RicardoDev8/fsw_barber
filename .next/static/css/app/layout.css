@@ -920,7 +920,7 @@ video {
 .border-transparent {
   border-color: transparent;
 }
-.bg-\[\#221c3d\] {
+.bg-\[\#221C3D\] {
   --tw-bg-opacity: 1;
   background-color: rgb(34 28 61 / var(--tw-bg-opacity));
 }
@@ -950,19 +950,6 @@ video {
 }
 .bg-transparent {
   background-color: transparent;
-}
-.bg-\[\] {
-  background-color: ;
-}
-.bg-\[\#\] {
-  background-color: #;
-}
-.bg-\[\#22\] {
-  background-color: #22;
-}
-.bg-\[\#221C3D\] {
-  --tw-bg-opacity: 1;
-  background-color: rgb(34 28 61 / var(--tw-bg-opacity));
 }
 .fill-primary {
   fill: hsl(var(--primary));
@@ -1245,10 +1232,6 @@ video {
 
 .hover\:bg-primary:hover {
   background-color: hsl(var(--primary));
-}
-
-.hover\:bg-primary\/80:hover {
-  background-color: hsl(var(--primary) / 0.8);
 }
 
 .hover\:bg-primary\/90:hover {

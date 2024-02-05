@@ -21,7 +21,7 @@ interface BookingItemProps {
 const BookingItem = ({booking}: BookingItemProps) => {
     return ( 
         <Card>
-            <CardContent className="p-5 flex justify-between" >
+            <CardContent className="w-full p-5 flex justify-between" >
         {!booking ? (
             <h2>Não há agendamentos</h2>
         ) : (

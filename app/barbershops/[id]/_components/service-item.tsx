@@ -19,6 +19,7 @@ import { Loader2 } from "lucide-react";
 import { toast } from "sonner";
 import { useRouter } from "next/navigation";
 import { getDayBookings } from "../_actions/get-day-bookings";
+import { AlertDialog, AlertDialogAction, AlertDialogCancel, AlertDialogContent, AlertDialogDescription, AlertDialogFooter, AlertDialogHeader, AlertDialogTitle, AlertDialogTrigger } from "@/app/_components/ui/alert-dialog";
 
 interface ServiceItemProps {
     barbershop: Barbershop;
@@ -62,16 +63,10 @@ const ServiceItem = ({service, barbershop, isAuthenticated}: ServiceItemProps) =
         setHour(time)
     }
 
-    const handleBookingClick = () => {
-        if(!isAuthenticated){
-            return signIn("google");
-        }
-
-        // TODO: abrir modal de agendamento
-    }
 
     const handleBookingSubmit = async () => {
         setSubmitIsLoading(true)
+
         try{
             if(!date || !hour || !data?.user){
                 return;
@@ -108,6 +103,14 @@ const ServiceItem = ({service, barbershop, isAuthenticated}: ServiceItemProps) =
         }finally{
             setSubmitIsLoading(false)
         }
+    }
+
+    const handleBookingClick = async () => {
+        if(!isAuthenticated){
+            return await signIn("google");
+        }
+
+        // TODO: abrir modal de agendamento
     }
 
     const timeList = useMemo(() => {
@@ -161,7 +164,7 @@ const ServiceItem = ({service, barbershop, isAuthenticated}: ServiceItemProps) =
                             </p>
                             <Sheet open={sheetIsOpen} onOpenChange={setSheetIsOpen} >
                                 <SheetTrigger asChild>
-                                    <Button variant="secondary" onClick={handleBookingClick}>
+                                    <Button variant="secondary">
                                         Reservar
                                     </Button>
                                 </SheetTrigger>
@@ -251,10 +254,44 @@ const ServiceItem = ({service, barbershop, isAuthenticated}: ServiceItemProps) =
                                        </Card>
                                     </div>
                                     <SheetFooter className="px-5">
+
+
+
+                                    {isAuthenticated ? (
                                         <Button onClick={handleBookingSubmit} disabled={(!hour) || submitIsLoading} className="w-full" >
                                             {submitIsLoading && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
+                                            
                                             Confirmar Reserva
                                         </Button>
+                                    ) : (
+                                        <AlertDialog>
+                                        <AlertDialogTrigger>
+                                        <Button onClick={handleBookingSubmit} disabled={(!hour) || submitIsLoading} className="w-full" >
+                                            {submitIsLoading && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
+                                           
+                                            Confirmar Reserva
+                                        </Button>
+                                        </AlertDialogTrigger>
+                                        <AlertDialogContent className="w-[90%]">
+                                            <AlertDialogHeader>
+                                            <AlertDialogTitle>Faça login para reservar</AlertDialogTitle>
+                                            <AlertDialogDescription>
+                                                Você precisa fazer login para fazer sua reserva
+                                            </AlertDialogDescription>
+                                            </AlertDialogHeader>
+                                            <AlertDialogFooter className="flex-row gap-3" >
+                                            <AlertDialogCancel className="w-full mt-0">Voltar</AlertDialogCancel>
+                                            <AlertDialogAction className="w-full" onClick={handleBookingClick}>
+                                            {submitIsLoading && (
+                                                <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                                            )}
+                                                Fazer login
+                                            </AlertDialogAction>
+                                            </AlertDialogFooter>
+                                        </AlertDialogContent>
+                                        </AlertDialog>
+                                    )}
+
                                     </SheetFooter>
                                 </SheetContent>
                             </Sheet>

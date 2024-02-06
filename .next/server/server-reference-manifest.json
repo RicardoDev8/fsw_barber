@@ -2,13 +2,31 @@
   "node": {
     "f84111ef356f540339a2af78cfca459bd8349031": {
       "workers": {
-        "app/(home)/page": "(action-browser)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22C%3A%5C%5CUsers%5C%5CHugo%5C%5COneDrive%5C%5CDocumentos%5C%5Cprogramacao%5C%5Cprojects_next%5C%5Cfsw_barber%5C%5Capp%5C%5C_actions%5C%5Ccancel-booking.ts%22%2C%5B%22default%22%5D%5D%5D&__client_imported__=true!"
+        "app/(home)/page": "(action-browser)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22C%3A%5C%5CUsers%5C%5CHugo%5C%5COneDrive%5C%5CDocumentos%5C%5Cprogramacao%5C%5Cprojects_next%5C%5Cfsw_barber%5C%5Capp%5C%5C_actions%5C%5Ccancel-booking.ts%22%2C%5B%22default%22%5D%5D%5D&__client_imported__=true!",
+        "app/bookings/page": "(action-browser)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22C%3A%5C%5CUsers%5C%5CHugo%5C%5COneDrive%5C%5CDocumentos%5C%5Cprogramacao%5C%5Cprojects_next%5C%5Cfsw_barber%5C%5Capp%5C%5C_actions%5C%5Ccancel-booking.ts%22%2C%5B%22default%22%5D%5D%5D&__client_imported__=true!"
       },
       "layer": {
-        "app/(home)/page": "action-browser"
+        "app/(home)/page": "action-browser",
+        "app/bookings/page": "action-browser"
+      }
+    },
+    "a771927b25a76e230d86fddc0bc2d52ca494bd3e": {
+      "workers": {
+        "app/barbershops/[id]/page": "(action-browser)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22C%3A%5C%5CUsers%5C%5CHugo%5C%5COneDrive%5C%5CDocumentos%5C%5Cprogramacao%5C%5Cprojects_next%5C%5Cfsw_barber%5C%5Capp%5C%5Cbarbershops%5C%5C%5Bid%5D%5C%5C_actions%5C%5Csave-booking.ts%22%2C%5B%22saveBooking%22%5D%5D%2C%5B%22C%3A%5C%5CUsers%5C%5CHugo%5C%5COneDrive%5C%5CDocumentos%5C%5Cprogramacao%5C%5Cprojects_next%5C%5Cfsw_barber%5C%5Capp%5C%5Cbarbershops%5C%5C%5Bid%5D%5C%5C_actions%5C%5Cget-day-bookings.ts%22%2C%5B%22getDayBookings%22%5D%5D%5D&__client_imported__=true!"
+      },
+      "layer": {
+        "app/barbershops/[id]/page": "action-browser"
+      }
+    },
+    "5cf1cbbe7355c0b8ed3b9adf2729567341217033": {
+      "workers": {
+        "app/barbershops/[id]/page": "(action-browser)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22C%3A%5C%5CUsers%5C%5CHugo%5C%5COneDrive%5C%5CDocumentos%5C%5Cprogramacao%5C%5Cprojects_next%5C%5Cfsw_barber%5C%5Capp%5C%5Cbarbershops%5C%5C%5Bid%5D%5C%5C_actions%5C%5Csave-booking.ts%22%2C%5B%22saveBooking%22%5D%5D%2C%5B%22C%3A%5C%5CUsers%5C%5CHugo%5C%5COneDrive%5C%5CDocumentos%5C%5Cprogramacao%5C%5Cprojects_next%5C%5Cfsw_barber%5C%5Capp%5C%5Cbarbershops%5C%5C%5Bid%5D%5C%5C_actions%5C%5Cget-day-bookings.ts%22%2C%5B%22getDayBookings%22%5D%5D%5D&__client_imported__=true!"
+      },
+      "layer": {
+        "app/barbershops/[id]/page": "action-browser"
       }
     }
   },
   "edge": {},
-  "encryptionKey": "hhETb1vjAcV9kZhzog0k6BseuDOgqGJk0970N9D+YRE="
+  "encryptionKey": "SVxwNKTBqaT5wmO6gZMnb53FAhB+roUoodLSQf/eKZY="
 }

@@ -1,10 +1,10 @@
 "use client";
 
-import { Booking, Prisma } from "@prisma/client";
+import { Prisma } from "@prisma/client";
 import { Avatar, AvatarImage, AvatarFallback } from "./ui/avatar";
 import { Badge } from "./ui/badge";
 import { Card, CardContent } from "./ui/card";
-import { format, isFuture, isPast } from "date-fns";
+import { format, isPast } from "date-fns";
 import { ptBR } from "date-fns/locale/pt-BR";
 import { Sheet, SheetClose, SheetContent, SheetFooter, SheetHeader, SheetTitle, SheetTrigger } from "./ui/sheet";
 import Image from "next/image";
@@ -33,7 +33,7 @@ const BookingItem = ({booking}: BookingItemProps) => {
 
     const isBookingConfirmed = isPast(booking.date);
     const isBookingFinished = isPast(booking.date);
-    // const isBookingConfirmed = isFuture(booking.date);
+
 
     const handleCancelClick = async () => {
         try{
@@ -41,6 +41,19 @@ const BookingItem = ({booking}: BookingItemProps) => {
             await cancelBooking(booking.id)
 
             toast.success("Reserva cancelada com sucesso!")
+        }catch (error){
+            console.error(error)
+        }finally{
+            setIsDeleteLoading(false)
+        }
+    }
+
+    const handleDeleteBooking = async () => {
+        try{
+            setIsDeleteLoading(true)
+            await cancelBooking(booking.id)
+
+            toast.success("Historico de reserva deletado com sucesso!")
         }catch (error){
             console.error(error)
         }finally{
@@ -155,16 +168,25 @@ const BookingItem = ({booking}: BookingItemProps) => {
                             <Button className="w-full" variant="secondary" >
                                 Voltar
                             </Button>
-                            </SheetClose>
+                        </SheetClose>
 
                             <AlertDialog>
                                 <AlertDialogTrigger asChild>
-                                    <Button disabled={isBookingConfirmed || isDeleteLoading} className="w-full" variant="destructive">
-                                    {isDeleteLoading && (
-                                        <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-                                    )}
-                                    Cancelar reserva
-                                    </Button>
+                                        {isBookingFinished ? (
+                                            <Button onClick={handleDeleteBooking} className="w-full" variant="destructive" >
+                                            {isDeleteLoading && (
+                                                <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                                            )}
+                                                Apagar histórico
+                                            </Button>
+                                        ) : (
+                                            <Button disabled={isBookingConfirmed || isDeleteLoading} className="w-full" variant="destructive">
+                                            {isDeleteLoading && (
+                                                <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                                            )}
+                                            Cancelar reserva
+                                            </Button>
+                                        )}
                                 </AlertDialogTrigger>
                                 <AlertDialogContent className="w-[90%]" >
                                     <AlertDialogHeader>

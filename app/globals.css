@@ -43,5 +43,8 @@
   body {
     @apply bg-background text-foreground antialiased h-screen flex flex-col;
   }
+  html {
+    @apply h-full
+  }
 
 }

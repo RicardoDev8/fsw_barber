@@ -20,11 +20,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-br">
-      <body className={`${inter.className} dark`}>
+      <body className={`${inter.className} dark h-[100vh]`}>
         <AuthProvider>
           {children}
           <Toaster/>
+          <div className="bottom-0 w-full" >
           <Footer/>
+          </div>
         </AuthProvider>
       </body>
     </html>

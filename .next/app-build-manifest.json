@@ -1,54 +1,20 @@
 {
   "pages": {
-    "/_not-found": [
-      "static/chunks/webpack-89a1f0dc5b62c023.js",
-      "static/chunks/fd9d1056-76286ddac84065c4.js",
-      "static/chunks/69-6eb98236b27ba371.js",
-      "static/chunks/main-app-80187de8cce2bde3.js",
-      "static/chunks/app/_not-found-ae2402825f839415.js"
-    ],
     "/layout": [
-      "static/chunks/webpack-89a1f0dc5b62c023.js",
-      "static/chunks/fd9d1056-76286ddac84065c4.js",
-      "static/chunks/69-6eb98236b27ba371.js",
-      "static/chunks/main-app-80187de8cce2bde3.js",
-      "static/chunks/344-018e7df2bf8c0bb1.js",
-      "static/css/ec3eabe2d09cd294.css",
-      "static/chunks/app/layout-be072b48b8de39cc.js"
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/css/app/layout.css",
+      "static/chunks/app/layout.js"
     ],
     "/(home)/page": [
-      "static/chunks/webpack-89a1f0dc5b62c023.js",
-      "static/chunks/fd9d1056-76286ddac84065c4.js",
-      "static/chunks/69-6eb98236b27ba371.js",
-      "static/chunks/main-app-80187de8cce2bde3.js",
-      "static/chunks/344-018e7df2bf8c0bb1.js",
-      "static/chunks/921-97ad5703ea3bbbab.js",
-      "static/chunks/885-75e8591ea262a5ab.js",
-      "static/chunks/28-c241b661f979b19a.js",
-      "static/chunks/app/(home)/page-afb2ed7bb792bc16.js"
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/(home)/page.js"
     ],
-    "/barbershops/[id]/page": [
-      "static/chunks/webpack-89a1f0dc5b62c023.js",
-      "static/chunks/fd9d1056-76286ddac84065c4.js",
-      "static/chunks/69-6eb98236b27ba371.js",
-      "static/chunks/main-app-80187de8cce2bde3.js",
-      "static/chunks/2f6dbc85-7d86ea50a864eb84.js",
-      "static/chunks/344-018e7df2bf8c0bb1.js",
-      "static/chunks/921-97ad5703ea3bbbab.js",
-      "static/chunks/951-b9f0179695937340.js",
-      "static/chunks/885-75e8591ea262a5ab.js",
-      "static/chunks/app/barbershops/[id]/page-890935d86d88d0e1.js"
-    ],
-    "/bookings/page": [
-      "static/chunks/webpack-89a1f0dc5b62c023.js",
-      "static/chunks/fd9d1056-76286ddac84065c4.js",
-      "static/chunks/69-6eb98236b27ba371.js",
-      "static/chunks/main-app-80187de8cce2bde3.js",
-      "static/chunks/344-018e7df2bf8c0bb1.js",
-      "static/chunks/921-97ad5703ea3bbbab.js",
-      "static/chunks/885-75e8591ea262a5ab.js",
-      "static/chunks/28-c241b661f979b19a.js",
-      "static/chunks/app/bookings/page-b619b8215d8c89b7.js"
+    "/not-found": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/not-found.js"
     ]
   }
 }

@@ -10,6 +10,7 @@ import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from "./ui
 import { Avatar, AvatarImage } from "./ui/avatar";
 import Link from "next/link";
 import SideMenu from "./side-menu";
+import logo from '../../public/Logo.png';
 
 const Header = () => {
 
@@ -17,7 +18,7 @@ const Header = () => {
         <Card>
             <CardContent className="p-5 justify-between flex flex-row items-center" >
                 <Link href="/" >
-                    <Image src="/logo.png" alt="FSW Barber" height={22} width={120} />
+                    <Image src={logo} alt="FSW Barber" height={22} width={120} />
                 </Link>
 
                 <Sheet>

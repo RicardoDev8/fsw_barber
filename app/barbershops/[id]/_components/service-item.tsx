@@ -13,7 +13,7 @@ import Image from "next/image";
 import { useEffect, useMemo, useState } from "react";
 import { ptBR } from "date-fns/locale/pt-BR";
 import { genareteDayTimeList } from "../_helpers/hours";
-import { format, setHours, setMinutes } from "date-fns";
+import { addDays, format, isPast, setHours, setMinutes } from "date-fns";
 import { saveBooking } from "../_actions/save-booking";
 import { Loader2 } from "lucide-react";
 import { toast } from "sonner";
@@ -60,6 +60,7 @@ const ServiceItem = ({service, barbershop, isAuthenticated}: ServiceItemProps) =
     }
 
     const handleHourClick = (time: string) => {
+
         setHour(time)
     }
 
@@ -180,6 +181,7 @@ const ServiceItem = ({service, barbershop, isAuthenticated}: ServiceItemProps) =
                                         selected={date}
                                         onSelect={handleDateClick}
                                         locale={ptBR}
+                                        fromDate={addDays(new Date(), 1)}
                                         styles={{
                                             caption: {
                                                 textTransform: "capitalize"
